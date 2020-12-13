@@ -1,0 +1,13 @@
+---
+version: 1
+
+base_image: 'quay.io/ansible/ansible-runner:devel'
+
+dependencies:
+  galaxy: requirements.yml
+  python: requirements.txt
+  system: bindep.txt
+  
+additional_build_steps:
+  prepend: |
+    RUN pip3 install --upgrade pip setuptools
